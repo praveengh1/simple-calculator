@@ -10,7 +10,7 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:focusable="false"
@@ -75,6 +75,16 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonDivide"
         app:layout_constraintStart_toEndOf="@+id/buttonDivide" />
 
+//monisha
+    <Button
+        android:id="@+id/buttonBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="()"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonMultiply"
+        app:layout_constraintStart_toEndOf="@+id/buttonMultiply" />
     <Button
         android:id="@+id/buttonMultiply"
         android:layout_width="wrap_content"

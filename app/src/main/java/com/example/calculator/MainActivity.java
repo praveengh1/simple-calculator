@@ -14,10 +14,13 @@ public class MainActivity extends AppCompatActivity {
     private EditText newNumber;
     private TextView displayOperation;
 
+
+
     // Variables to hold the operands and type of calculations
     private Double operand1 = null;
     private Double operand2 = null;
     private String pendingOperation = "=";
+     private boolean bracketBegin=true;
 
     private static final String STATE_PENDING_OPERATION = "PendingOperation";
     private static final String STATE_OPERAND1 = "Operand1";
@@ -49,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
         Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
 
+       Button buttonBracket= (Button) findViewById(R.id.btnBracket);
+
+
+
+
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +76,19 @@ public class MainActivity extends AppCompatActivity {
         button8.setOnClickListener(listener);
         button9.setOnClickListener(listener);
         buttonDot.setOnClickListener(listener);
+        View.OnClickListener BracketListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Button b = (Button) v;
+                String bracket="(";
+                if(!bracketBegin)
+                    bracket=")";
+                bracketBegin= !bracketBegin;
+                newNumber.append(bracket.toString());
+            }
+        };
+       buttonBracket.setOnClickListener(BracketListener);
         View.OnClickListener opListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,10 +107,10 @@ public class MainActivity extends AppCompatActivity {
         };
 
         buttonEquals.setOnClickListener(opListener);
-        buttonDivide.setOnClickListener(opListener);
-        buttonMultiply.setOnClickListener(opListener);
-        buttonMinus.setOnClickListener(opListener);
-        buttonPlus.setOnClickListener(opListener);
+        buttonDivide.setOnClickListener(listener);
+        buttonMultiply.setOnClickListener(listener);
+        buttonMinus.setOnClickListener(listener);
+        buttonPlus.setOnClickListener(listener);
 
         Button buttonNeg = (Button) findViewById(R.id.buttonNeg);
 
@@ -111,6 +132,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
+
     }
 
     @Override
@@ -159,6 +185,8 @@ public class MainActivity extends AppCompatActivity {
                 case "+":
                     operand1 += operand2;
                     break;
+
+                    // i think i have to have () to pending operations as well.
             }
         }
 
