@@ -215,6 +215,7 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/button3"
         app:layout_constraintStart_toStartOf="@+id/buttonMultiply" />
 
+    <!-- Vasudevan - Phase 1: Adding Square button -->
     <Button
         android:id="@+id/buttonSquare"
         android:layout_width="wrap_content"
@@ -226,6 +227,7 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonMultiply"
         app:layout_constraintStart_toEndOf="@+id/buttonMultiply" />
 
+    <!-- Vasudevan - Phase 1: Adding SquareRoot button -->
     <Button
         android:id="@+id/buttonSquareRoot"
         android:layout_width="wrap_content"
