@@ -3,6 +3,10 @@ package com.example.calculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.mozilla.javascript.Context;
+import org.mozilla.javascript.Scriptable;
+import org.mozilla.javascript.ast.Scope;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,13 +19,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView displayOperation;
 
 
-
     // Variables to hold the operands and type of calculations
     private Double operand1 = null;
     private Double operand2 = null;
     private String pendingOperation = "=";
      private boolean bracketBegin=true;
-
     private static final String STATE_PENDING_OPERATION = "PendingOperation";
     private static final String STATE_OPERAND1 = "Operand1";
 
@@ -94,16 +96,33 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Button b = (Button) v;
                 String op = b.getText().toString();
-                String value = newNumber.getText().toString();
+                String process = newNumber.getText().toString().toLowerCase();
+                System.out.println("Expression:====> "+process);
+
+                process = process.replaceAll("x", "*");
+                process = process.replaceAll("%",  "/100");
+                process = process.replaceAll("÷","/");
+
+                Context rhino = Context.enter();
+                rhino.setOptimizationLevel(-1);
+
+                String finalResult = "";
+
                 try {
-                    Double doubleValue = Double.valueOf(value);
-                    performOperation(doubleValue, op);
-                } catch (NumberFormatException e) {
-                    newNumber.setText("");
+                    Scriptable scriptable = rhino.initStandardObjects();
+                    finalResult = rhino.evaluateString(scriptable,process,"javascript",1,null).toString();
+                }catch (Exception e){
+                    System.out.println(e.toString());
+                    finalResult="0";
                 }
-                pendingOperation = op;
-                displayOperation.setText(pendingOperation);
+                result.setText(finalResult);
+                newNumber.setText("");
+
+
             }
+
+
+
         };
 
         buttonEquals.setOnClickListener(opListener);
@@ -135,8 +154,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
     }
 
     @Override
@@ -156,42 +173,42 @@ public class MainActivity extends AppCompatActivity {
         displayOperation.setText(pendingOperation);
     }
 
-    private void performOperation(Double value, String operation) {
-        if (null == operand1) {
-            operand1 = value;
-        } else {
-            operand2 = value;
-
-            if (pendingOperation.equals("=")) {
-                pendingOperation = operation;
-            }
-            switch (pendingOperation) {
-                case "=":
-                    operand1 = operand2;
-                    break;
-                case "/":
-                    if (operand2 == 0) {
-                        operand1 = 0.0;
-                    } else {
-                        operand1 /= operand2;
-                    }
-                    break;
-                case "x":
-                    operand1 *= operand2;
-                    break;
-                case "-":
-                    operand1 -= operand2;
-                    break;
-                case "+":
-                    operand1 += operand2;
-                    break;
-
-                    // i think i have to have () to pending operations as well.
-            }
-        }
-
-        result.setText(operand1.toString());
-        newNumber.setText("");
-    }
+//    private void performOperation(Double value, String operation) {
+//        if (null == operand1) {
+//            operand1 = value;
+//        } else {
+//            operand2 = value;
+//
+//            if (pendingOperation.equals("=")) {
+//                pendingOperation = operation;
+//            }
+//            switch (pendingOperation) {
+//                case "=":
+//                    operand1 = operand2;
+//                    break;
+//                case "/":
+//                    if (operand2 == 0) {
+//                        operand1 = 0.0;
+//                    } else {
+//                        operand1 /= operand2;
+//                    }
+//                    break;
+//                case "x":
+//                    operand1 *= operand2;
+//                    break;
+//                case "-":
+//                    operand1 -= operand2;
+//                    break;
+//                case "+":
+//                    operand1 += operand2;
+//                    break;
+//
+//
+//            }
+//        }
+//
+//        result.setText(operand1.toString());
+//        newNumber.setText("");
+//    }
 
 }
