@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String STATE_PENDING_OPERATION = "PendingOperation";
     private static final String STATE_OPERAND1 = "Operand1";
 
+    CalculationUtils utils = new CalculationUtils();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMultiply = (Button) findViewById(R.id.buttonMultiply);
         Button buttonMinus = (Button) findViewById(R.id.buttonMinus);
         Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
+        Button buttonSquare = (Button) findViewById(R.id.buttonSquare);
+        Button buttonSquareRoot = (Button) findViewById(R.id.buttonSquareRoot);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -90,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
         buttonMultiply.setOnClickListener(opListener);
         buttonMinus.setOnClickListener(opListener);
         buttonPlus.setOnClickListener(opListener);
+        buttonSquare.setOnClickListener(opListener);
+        buttonSquareRoot.setOnClickListener(opListener);
 
         Button buttonNeg = (Button) findViewById(R.id.buttonNeg);
 
@@ -133,12 +139,17 @@ public class MainActivity extends AppCompatActivity {
     private void performOperation(Double value, String operation) {
         if (null == operand1) {
             operand1 = value;
+            /* Vasudevan - Phase 1: Adding SquareRoot function */
+            if (operation.equals("√")) {
+                pendingOperation = operation;
+                operand1 = utils.findSquareRoot(operand1);
+            }
         } else {
             operand2 = value;
-
             if (pendingOperation.equals("=")) {
                 pendingOperation = operation;
             }
+
             switch (pendingOperation) {
                 case "=":
                     operand1 = operand2;
@@ -159,6 +170,9 @@ public class MainActivity extends AppCompatActivity {
                 case "+":
                     operand1 += operand2;
                     break;
+                /* Vasudevan - Phase 1: Adding Square function */
+                case "^":
+                    operand1 = utils.findSquare(operand1, operand2);
             }
         }
 
