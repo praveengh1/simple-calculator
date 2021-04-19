@@ -239,4 +239,38 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonMinus"
         app:layout_constraintStart_toEndOf="@+id/buttonMinus" />
 
+    <!-- Monisha - phase 1 : Adding sin , cos and tan button -->
+    <Button
+        android:id="@+id/buttonSin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="Sin"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonNeg"
+        app:layout_constraintStart_toEndOf="@+id/buttonNeg" />
+
+    <Button
+        android:id="@+id/buttonCos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="Cos"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonSquare"
+        app:layout_constraintStart_toEndOf="@+id/buttonSquare" />
+
+    <Button
+        android:id="@+id/buttonTan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="Tan"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonSquareRoot"
+        app:layout_constraintStart_toEndOf="@+id/buttonSquareRoot" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

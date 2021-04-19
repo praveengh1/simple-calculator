@@ -52,7 +52,9 @@ public class MainActivity extends AppCompatActivity {
         Button buttonPlus = (Button) findViewById(R.id.buttonPlus);
         Button buttonSquare = (Button) findViewById(R.id.buttonSquare);
         Button buttonSquareRoot = (Button) findViewById(R.id.buttonSquareRoot);
-
+        Button buttonSin = (Button) findViewById(R.id.buttonSin);
+        Button buttonCos = (Button) findViewById(R.id.buttonCos);
+        Button buttonTan = (Button) findViewById(R.id.buttonTan);
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +98,9 @@ public class MainActivity extends AppCompatActivity {
         buttonPlus.setOnClickListener(opListener);
         buttonSquare.setOnClickListener(opListener);
         buttonSquareRoot.setOnClickListener(opListener);
+        buttonSin.setOnClickListener(opListener);
+        buttonCos.setOnClickListener(opListener);
+        buttonTan.setOnClickListener(opListener);
 
         Button buttonNeg = (Button) findViewById(R.id.buttonNeg);
 
@@ -144,6 +149,18 @@ public class MainActivity extends AppCompatActivity {
                 pendingOperation = operation;
                 operand1 = utils.findSquareRoot(operand1);
             }
+            else if (operation.equals("sin")) {
+                pendingOperation = operation;
+                operand1 = utils.findSin(operand1);
+            }
+            else if (operation.equals("cos")) {
+                pendingOperation = operation;
+                operand1 = utils.findCos(operand1);
+            }
+            else if (operation.equals("tan")) {
+                pendingOperation = operation;
+                operand1 = utils.findTan(operand1);
+            }
         } else {
             operand2 = value;
             if (pendingOperation.equals("=")) {
@@ -173,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 /* Vasudevan - Phase 1: Adding Square function */
                 case "^":
                     operand1 = utils.findSquare(operand1, operand2);
+
             }
         }
 
