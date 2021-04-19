@@ -212,6 +212,64 @@
         android:text="."
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonEqual"
         app:layout_constraintEnd_toEndOf="@+id/button2" />
+    <!-- Josh Arrants - Phase 1: Added the Buttons Vasudevan and Monisha created for landscape -->
+    <!-- Vasudevan - Phase 1: Adding Square button -->
+    <Button
+        android:id="@+id/buttonSquare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="^"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonMultiply"
+        app:layout_constraintStart_toEndOf="@+id/buttonMultiply" />
+
+    <!-- Vasudevan - Phase 1: Adding SquareRoot button -->
+    <Button
+        android:id="@+id/buttonSquareRoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="√"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonMinus"
+        app:layout_constraintStart_toEndOf="@+id/buttonMinus" />
+
+    <!-- Monisha - phase 1 : Adding sin , cos and tan button -->
+    <Button
+        android:id="@+id/buttonSin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="Sin"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonNeg"
+        app:layout_constraintStart_toEndOf="@+id/buttonNeg" />
+
+    <Button
+        android:id="@+id/buttonCos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="Cos"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonSquare"
+        app:layout_constraintStart_toEndOf="@+id/buttonSquare" />
+
+    <Button
+        android:id="@+id/buttonTan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:minWidth="48dp"
+        android:text="Tan"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonSquareRoot"
+        app:layout_constraintStart_toEndOf="@+id/buttonSquareRoot" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
