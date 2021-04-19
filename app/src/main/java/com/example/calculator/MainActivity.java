@@ -142,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void performOperation(Double value, String operation) {
+
         if (null == operand1) {
             operand1 = value;
             /* Vasudevan - Phase 1: Adding SquareRoot function */
@@ -149,15 +150,15 @@ public class MainActivity extends AppCompatActivity {
                 pendingOperation = operation;
                 operand1 = utils.findSquareRoot(operand1);
             }
-            else if (operation.equals("sin")) {
+            else if (operation.equals("Sin")) {
                 pendingOperation = operation;
                 operand1 = utils.findSin(operand1);
             }
-            else if (operation.equals("cos")) {
+            else if (operation.equals("Cos")) {
                 pendingOperation = operation;
                 operand1 = utils.findCos(operand1);
             }
-            else if (operation.equals("tan")) {
+            else if (operation.equals("Tan")) {
                 pendingOperation = operation;
                 operand1 = utils.findTan(operand1);
             }
