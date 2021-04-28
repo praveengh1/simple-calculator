@@ -202,21 +202,22 @@
         android:id="@+id/buttonMod"
         android:layout_width="48dp"
         android:layout_height="47dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="Mod"
         android:textSize="11sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonPlus"
-        app:layout_constraintStart_toEndOf="@+id/buttonPlus" />
+        app:layout_constraintStart_toStartOf="@+id/buttonSquareRoot"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSquareRoot" />
 
     <Button
         android:id="@+id/buttonPercent"
         android:layout_width="47dp"
         android:layout_height="47dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="%"
         android:textSize="11sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonMod"
         app:layout_constraintStart_toEndOf="@+id/buttonMod"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTan"
         tools:layout_constraintStart_toEndOf="@+id/buttonMod"
         tools:minWidth="48dp" />
 
@@ -296,6 +297,52 @@
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonSquareRoot"
         app:layout_constraintStart_toEndOf="@+id/buttonSquareRoot" />
+<!-- Josh Arrants - Phase 2 Added Memory Buttons -->
+    <Button
+        android:id="@+id/buttonMemoryPlus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minWidth="48dp"
+        android:text="M+"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/button0"
+        app:layout_constraintTop_toBottomOf="@+id/button0" />
+
+    <Button
+        android:id="@+id/buttonMemoryMinus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minWidth="48dp"
+        android:text="M-"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonMemoryPlus"
+        app:layout_constraintStart_toStartOf="@+id/buttonDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDecimal" />
+
+    <Button
+        android:id="@+id/buttonMemoryClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minWidth="48dp"
+        android:text="MC"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/buttonEqual"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEqual" />
+
+    <Button
+        android:id="@+id/buttonMemoryRecall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minWidth="48dp"
+        android:text="MR"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/buttonEqual"
+        app:layout_constraintStart_toStartOf="@+id/buttonPlus"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlus" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
