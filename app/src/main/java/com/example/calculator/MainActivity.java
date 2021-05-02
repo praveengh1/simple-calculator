@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         Button buttonTan = (Button) findViewById(R.id.buttonTan);
         Button buttonPercent = (Button) findViewById(R.id.buttonPercent);
         Button buttonMod = (Button) findViewById(R.id.buttonMod);
+        Button buttonFact = (Button) findViewById(R.id.buttonFactorial);
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         buttonTan.setOnClickListener(opListener);
         buttonPercent.setOnClickListener(opListener);
         buttonMod.setOnClickListener(opListener);
+        buttonFact.setOnClickListener(opListener);
 
         Button buttonNeg = (Button) findViewById(R.id.buttonNeg);
 
@@ -166,6 +169,11 @@ public class MainActivity extends AppCompatActivity {
             else if (operation.equals("Tan")) {
                 pendingOperation = operation;
                 operand1 = utils.findTan(operand1);
+            }
+            /* Vasudevan - Phase 2: Handling factorial calculation */
+            if (operation.equals("!")) {
+                pendingOperation = operation;
+                operand1 = utils.findFact(operand1);
             }
         } else {
             operand2 = value;
