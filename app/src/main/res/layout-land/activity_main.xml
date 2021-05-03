@@ -333,14 +333,6 @@
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/buttonEqual"
         app:layout_constraintTop_toBottomOf="@+id/buttonEqual" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
     <!-- monisha- phase 2 Adding Log with base 10 Button -->
     <Button
         android:id="@+id/buttonLog"
@@ -350,10 +342,14 @@
         android:minWidth="48dp"
         android:text="Log"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonFactorial"
-        app:layout_constraintStart_toStartOf="@+id/buttonPercent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPercent" />
+        app:layout_constraintStart_toStartOf="@+id/buttonPlus"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPlus" />
 
-
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
