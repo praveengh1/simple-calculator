@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonPercent = (Button) findViewById(R.id.buttonPercent);
         Button buttonMod = (Button) findViewById(R.id.buttonMod);
         Button buttonFact = (Button) findViewById(R.id.buttonFactorial);
+        Button buttonLog = (Button) findViewById(R.id.buttonLog);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
         buttonPercent.setOnClickListener(opListener);
         buttonMod.setOnClickListener(opListener);
         buttonFact.setOnClickListener(opListener);
+        buttonLog.setOnClickListener(opListener);
 
         Button buttonNeg = (Button) findViewById(R.id.buttonNeg);
 
@@ -175,11 +177,18 @@ public class MainActivity extends AppCompatActivity {
                 pendingOperation = operation;
                 operand1 = utils.findFact(operand1);
             }
+            /* Monisha - phase 2 : Handling Log functionality for base 10 */
+            if (operation.equals("Log")){
+                pendingOperation=operation;
+                operand1=utils.findLog(operand1);
+
+            }
         } else {
             operand2 = value;
             if (pendingOperation.equals("=")) {
                 pendingOperation = operation;
             }
+
 
             switch (pendingOperation) {
                 case "=":

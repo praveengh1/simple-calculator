@@ -43,5 +43,11 @@ public class CalculationUtils {
         }
         return fact;
     }
+
+    /*Monisha  - phase 2:Adding Log functionality for base 10 */
+   public double findLog(double e1) {
+        return Math.log10(e1);
+    }
+
 }
 
