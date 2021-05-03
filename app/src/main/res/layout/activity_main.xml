@@ -297,52 +297,17 @@
         android:textSize="12sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonSquareRoot"
         app:layout_constraintStart_toEndOf="@+id/buttonSquareRoot" />
-<!-- Josh Arrants - Phase 2 Added Memory Buttons -->
+<!-- Josh Arrants - Phase 2 Added Memory Button -->
     <Button
-        android:id="@+id/buttonMemoryPlus"
+        android:id="@+id/buttonMemoryStore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
-        android:text="M+"
+        android:text="MS"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/button0"
-        app:layout_constraintTop_toBottomOf="@+id/button0" />
-
-    <Button
-        android:id="@+id/buttonMemoryMinus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:minWidth="48dp"
-        android:text="M-"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonMemoryPlus"
-        app:layout_constraintStart_toStartOf="@+id/buttonDecimal"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDecimal" />
-
-    <Button
-        android:id="@+id/buttonMemoryClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:minWidth="48dp"
-        android:text="MC"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/buttonEqual"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEqual" />
-
-    <Button
-        android:id="@+id/buttonMemoryRecall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:minWidth="48dp"
-        android:text="MR"
-        android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonEqual"
-        app:layout_constraintStart_toStartOf="@+id/buttonPlus"
-        app:layout_constraintTop_toBottomOf="@+id/buttonPlus" />
+        app:layout_constraintTop_toBottomOf="@+id/button0"/>
 
     <!-- Vasudevan - Phase 2 Added Factorial button -->
     <Button
@@ -353,8 +318,20 @@
         android:minWidth="48dp"
         android:text="!"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/buttonMemoryRecall"
-        app:layout_constraintStart_toStartOf="@+id/buttonMod"
-        app:layout_constraintTop_toBottomOf="@+id/buttonMod" />
+        app:layout_constraintStart_toEndOf="@+id/button0"
+        app:layout_constraintStart_toStartOf="@+id/buttonDecimal"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDecimal" />
+
+    /* Joshua Arrants - Phase 3: Handling Clear Logic  */
+    <Button
+        android:id="@+id/buttonClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minWidth="48dp"
+        android:text="C"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/buttonEqual"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEqual" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

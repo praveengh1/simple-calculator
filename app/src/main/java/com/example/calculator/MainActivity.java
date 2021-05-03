@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         Button buttonPercent = (Button) findViewById(R.id.buttonPercent);
         Button buttonMod = (Button) findViewById(R.id.buttonMod);
         Button buttonFact = (Button) findViewById(R.id.buttonFactorial);
+        Button buttonMemory = (Button) findViewById(R.id.buttonMemoryStore);
+        Button buttonClear = (Button) findViewById(R.id.buttonClear);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         button9.setOnClickListener(listener);
         buttonDot.setOnClickListener(listener);
 
-        View.OnClickListener opListener = new View.OnClickListener() {
+        final View.OnClickListener opListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Button b = (Button) v;
@@ -94,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 pendingOperation = op;
                 displayOperation.setText(pendingOperation);
             }
+
+
         };
 
         buttonEquals.setOnClickListener(opListener);
@@ -109,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         buttonPercent.setOnClickListener(opListener);
         buttonMod.setOnClickListener(opListener);
         buttonFact.setOnClickListener(opListener);
+        buttonMemory.setOnClickListener(opListener);
 
         Button buttonNeg = (Button) findViewById(R.id.buttonNeg);
 
@@ -130,7 +135,20 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        /* Joshua Arrants - Phase 3: Handling Clear Logic  */
+        buttonClear.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View v) {
+                newNumber.setText("");
+                result.setText("");
+                operand1 = null;
+                operand2 = null;
+                displayOperation.setText("");
+            }
+        });
     }
+
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
@@ -176,9 +194,16 @@ public class MainActivity extends AppCompatActivity {
                 operand1 = utils.findFact(operand1);
             }
         } else {
+
             operand2 = value;
+
             if (pendingOperation.equals("=")) {
                 pendingOperation = operation;
+            }
+            /* Joshua Arrants - Phase 2: Handling Memory Recall */
+            if (pendingOperation.equals("MS")){
+                operand2 = value;
+                newNumber.setText(operand2.toString());
             }
 
             switch (pendingOperation) {
