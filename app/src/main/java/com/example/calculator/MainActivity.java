@@ -219,10 +219,13 @@ public class MainActivity extends AppCompatActivity {
                     operand1 = operand2;
                     break;
                 case "/":
-                    if (operand2 == 0) {
-                        operand1 = 0.0;
-                    } else {
+                    /* Nicki Swart - Phase 2: Adding Exception Message for Dividing by Double 0 */
+                    try {
                         operand1 /= operand2;
+                    }
+                    catch
+                    (ArithmeticException e) {
+                        System.out.println("Can't divide by zero" + e);
                     }
                     break;
                 case "x":
