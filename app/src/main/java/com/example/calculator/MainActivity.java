@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMemory = (Button) findViewById(R.id.buttonMemoryStore);
         Button buttonClear = (Button) findViewById(R.id.buttonClear);
         Button buttonLog = (Button) findViewById(R.id.buttonLog);
+        //phase 3 - monisha
+        Button buttonCuberoot=(Button) findViewById(R.id.buttonCubeRoot);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -116,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         buttonFact.setOnClickListener(opListener);
         buttonMemory.setOnClickListener(opListener);
         buttonLog.setOnClickListener(opListener);
+        buttonCuberoot.setOnClickListener(opListener);
 
         Button buttonNeg = (Button) findViewById(R.id.buttonNeg);
 
@@ -178,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 pendingOperation = operation;
                 operand1 = utils.findSquareRoot(operand1);
             }
+
             else if (operation.equals("Sin")) {
                 pendingOperation = operation;
                 operand1 = utils.findSin(operand1);
@@ -200,6 +204,11 @@ public class MainActivity extends AppCompatActivity {
                 pendingOperation=operation;
                 operand1=utils.findLog(operand1);
 
+            }
+            /* Monisha - phase 3 :adding CubeRoot function */
+            if (operation.equals("3√")) {
+                pendingOperation = operation;
+                operand1 = utils.findcbrt(operand1);
             }
         } else {
 

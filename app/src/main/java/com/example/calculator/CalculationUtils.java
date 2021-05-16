@@ -46,7 +46,13 @@ public class CalculationUtils {
 
     /*Monisha  - phase 2:Adding Log functionality for base 10 */
    public double findLog(double e1) {
-        return Math.log10(e1);
+
+       return Math.log10(e1);
+    }
+
+    /*Monisha - phase 3 :Adding cube root functionality */
+    public double findcbrt(double e1) {
+        return Math.cbrt(e1);
     }
 
 }

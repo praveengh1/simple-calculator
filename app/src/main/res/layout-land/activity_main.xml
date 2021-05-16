@@ -345,6 +345,18 @@
         app:layout_constraintStart_toStartOf="@+id/buttonPlus"
         app:layout_constraintTop_toBottomOf="@+id/buttonPlus" />
 
+    <!-- monisha- phase 3 Adding CubeRoot functionality Button -->
+    <Button
+        android:id="@+id/buttonCubeRoot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minWidth="48dp"
+        android:text="3√"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/buttonMod"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMod" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
