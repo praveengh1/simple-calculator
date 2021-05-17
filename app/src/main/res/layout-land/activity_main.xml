@@ -174,6 +174,7 @@
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
         android:text="1"
+        android:background="#909090"
         app:layout_constraintBaseline_toBaselineOf="@+id/button2"
         app:layout_constraintEnd_toStartOf="@+id/button2" />
 
