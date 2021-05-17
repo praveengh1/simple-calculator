@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#b2ccf7"
     tools:context=".MainActivity">
 
     <EditText
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@id/newNumber"
         app:layout_constraintEnd_toStartOf="@+id/newNumber"
@@ -54,6 +55,8 @@
         android:layout_height="wrap_content"
         android:minWidth="48dp"
         android:text="0"
+        android:textStyle="bold"
+        android:background="#909090"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonDecimal"
         app:layout_constraintStart_toStartOf="@+id/button1" />
 
@@ -63,6 +66,8 @@
         android:layout_height="wrap_content"
         android:minWidth="48dp"
         android:text="1"
+        android:background="#909090"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button4" />
 
@@ -72,6 +77,8 @@
         android:layout_height="wrap_content"
         android:minWidth="48dp"
         android:text="2"
+        android:background="#909090"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/button3"
         app:layout_constraintStart_toStartOf="@+id/button5" />
 
@@ -82,6 +89,8 @@
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="3"
+        android:background="#909090"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/button6"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
 
@@ -92,6 +101,8 @@
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
         android:text="4"
+        android:background="#909090"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/button5"
         app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintStart_toStartOf="@+id/button7" />
@@ -103,6 +114,8 @@
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
         android:text="5"
+        android:background="#909090"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/button6"
         app:layout_constraintEnd_toStartOf="@+id/button6"
         app:layout_constraintStart_toStartOf="@+id/button8" />
@@ -114,6 +127,8 @@
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="6"
+        android:background="#909090"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/button9"
         app:layout_constraintTop_toBottomOf="@+id/button9" />
 
@@ -124,6 +139,7 @@
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
         android:text="7"
+        android:background="#909090"
         app:layout_constraintBaseline_toBaselineOf="@+id/button8"
         app:layout_constraintEnd_toStartOf="@+id/button8" />
 
@@ -134,6 +150,8 @@
         android:layout_marginEnd="8dp"
         android:minWidth="48dp"
         android:text="8"
+        android:background="#909090"
+        android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/button9"
         app:layout_constraintEnd_toStartOf="@+id/button9" />
 
@@ -144,6 +162,8 @@
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="9"
+        android:background="#909090"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newNumber" />
@@ -153,17 +173,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="48dp"
+        android:textSize="11sp"
         android:text="x"
+        android:textStyle="bold"
+        android:background="#909090"
         app:layout_constraintBaseline_toBaselineOf="@+id/button6"
         app:layout_constraintStart_toStartOf="@+id/buttonDivide" />
 
     <Button
-        android:id="@+id/buttonEqual"
+        android:id="@+id/buttonNeg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
-        android:text="="
+        android:text="Neg"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:background="#909090"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
@@ -174,17 +200,21 @@
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
         android:text="/"
+        android:textStyle="bold"
+        android:background="#909090"
         app:layout_constraintBaseline_toBaselineOf="@+id/button9"
         app:layout_constraintStart_toEndOf="@+id/button9" />
 
     <Button
-        android:id="@+id/buttonNeg"
+        android:id="@+id/buttonCubeRoot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
-        android:text="Neg"
+        android:text="3√"
+        android:textStyle="bold"
         android:textSize="12sp"
+        android:background="#e1ae8b"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonDivide"
         app:layout_constraintStart_toEndOf="@+id/buttonDivide" />
 
@@ -194,7 +224,9 @@
         android:layout_height="wrap_content"
         android:minWidth="48dp"
         android:text="+"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonEqual"
+        android:textStyle="bold"
+        android:background="#909090"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonNeg"
         app:layout_constraintStart_toStartOf="@+id/buttonMinus" />
 
     <!-- Nicki - phase 1 : Adding Percent and Mod button -->
@@ -205,6 +237,8 @@
         android:layout_marginTop="8dp"
         android:text="Mod"
         android:textSize="11sp"
+        android:textStyle="bold"
+        android:background="#e1ae8b"
         app:layout_constraintStart_toStartOf="@+id/buttonSquareRoot"
         app:layout_constraintTop_toBottomOf="@+id/buttonSquareRoot" />
 
@@ -215,7 +249,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="%"
-        android:textSize="11sp"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:background="#e1ae8b"
         app:layout_constraintStart_toEndOf="@+id/buttonMod"
         app:layout_constraintTop_toBottomOf="@+id/buttonTan"
         tools:layout_constraintStart_toEndOf="@+id/buttonMod"
@@ -227,7 +263,10 @@
         android:layout_height="wrap_content"
         android:minWidth="48dp"
         android:text="."
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonEqual"
+        android:background="#909090"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonNeg"
         app:layout_constraintStart_toStartOf="@+id/button2" />
 
     <!-- Vasudevan - Phase 1: Adding Square button -->
@@ -237,7 +276,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minWidth="48dp"
+        android:textSize="13sp"
         android:text="-"
+        android:textStyle="bold"
+        android:background="#909090"
         app:layout_constraintBaseline_toBaselineOf="@+id/button3"
         app:layout_constraintStart_toStartOf="@+id/buttonMultiply" />
 
@@ -248,7 +290,9 @@
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
         android:text="^"
-        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textSize="13sp"
+        android:background="#e1ae8b"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonMultiply"
         app:layout_constraintStart_toEndOf="@+id/buttonMultiply" />
 
@@ -260,7 +304,9 @@
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
         android:text="√"
+        android:textStyle="bold"
         android:textSize="12sp"
+        android:background="#e1ae8b"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonMinus"
         app:layout_constraintStart_toEndOf="@+id/buttonMinus" />
 
@@ -272,9 +318,11 @@
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
         android:text="Sin"
-        android:textSize="12sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonNeg"
-        app:layout_constraintStart_toEndOf="@+id/buttonNeg" />
+        android:textStyle="bold"
+        android:textSize="11sp"
+        android:background="#e1ae8b"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonCubeRoot"
+        app:layout_constraintStart_toEndOf="@+id/buttonCubeRoot" />
 
     <Button
         android:id="@+id/buttonCos"
@@ -283,7 +331,9 @@
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
         android:text="Cos"
-        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        android:background="#e1ae8b"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonSquare"
         app:layout_constraintStart_toEndOf="@+id/buttonSquare" />
 
@@ -294,7 +344,9 @@
         android:layout_marginStart="8dp"
         android:minWidth="48dp"
         android:text="Tan"
-        android:textSize="12sp"
+        android:textStyle="bold"
+        android:textSize="11sp"
+        android:background="#e1ae8b"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonSquareRoot"
         app:layout_constraintStart_toEndOf="@+id/buttonSquareRoot" />
 <!-- Josh Arrants - Phase 2 Added Memory Button -->
@@ -305,7 +357,9 @@
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="MS"
+        android:textStyle="bold"
         android:textSize="12sp"
+        android:background="#e1ae8b"
         app:layout_constraintStart_toStartOf="@+id/button0"
         app:layout_constraintTop_toBottomOf="@+id/button0"/>
 
@@ -317,7 +371,9 @@
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="!"
+        android:textStyle="bold"
         android:textSize="12sp"
+        android:background="#e1ae8b"
         app:layout_constraintStart_toEndOf="@+id/button0"
         app:layout_constraintStart_toStartOf="@+id/buttonDecimal"
         app:layout_constraintTop_toBottomOf="@+id/buttonDecimal" />
@@ -330,9 +386,11 @@
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="C"
+        android:textStyle="bold"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/buttonEqual"
-        app:layout_constraintTop_toBottomOf="@+id/buttonEqual" />
+        android:background="#e1ae8b"
+        app:layout_constraintStart_toStartOf="@+id/buttonNeg"
+        app:layout_constraintTop_toBottomOf="@+id/buttonNeg" />
 
     <!-- monisha- phase 2 Adding Log with base 10 Button -->
     <Button
@@ -342,21 +400,25 @@
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
         android:text="Log"
+        android:textStyle="bold"
+        android:background="#e1ae8b"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/buttonPlus"
         app:layout_constraintTop_toBottomOf="@+id/buttonPlus" />
 <!-- monisha - phase 3 Adding CubeRoot functionality -->
     <Button
-        android:id="@+id/buttonCubeRoot"
+        android:id="@+id/buttonEqual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:minWidth="48dp"
-        android:text="3√"
+        android:text="="
+        android:textStyle="bold"
         android:textSize="12sp"
+        android:background="#909090"
         app:layout_constraintStart_toStartOf="@+id/buttonMod"
         app:layout_constraintTop_toBottomOf="@+id/buttonMod" />
 
-
+<!-- Vasudevan - phase3 - Modifications to background color, button text, button color and other cosmetic layout changes -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
